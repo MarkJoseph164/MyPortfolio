@@ -329,6 +329,11 @@ export default function CvDocument({
           <Text style={styles.heading} minPresenceAhead={26}>
             Profile
           </Text>
+          {portfolioUrl ? (
+            <Text style={styles.text}>
+              Portfolio: {portfolioUrl.replace(/^https?:\/\//, "")}
+            </Text>
+          ) : null}
           <Text style={styles.text}>{profile.summary}</Text>
         </View>
 
@@ -420,28 +425,7 @@ export default function CvDocument({
                 ) : null}
                 {project.aiAssisted ? (
                   <Text style={styles.tech}>
-                    {AI_ASSISTED_NOTE}
-                    {project.url ? (
-                      <>
-                        {" | "}
-                        <Link
-                          src={project.url}
-                          style={{ color: MUTED, textDecoration: "none" }}
-                        >
-                          {project.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
-                        </Link>
-                      </>
-                    ) : null}
-                  </Text>
-                ) : null}
-                {project.url ? (
-                  <Text style={styles.tech}>
-                    <Link
-                      src={project.url}
-                      style={{ color: MUTED, textDecoration: "none" }}
-                    >
-                      {project.url.replace(/^https?:\/\//, "")}
-                    </Link>
+                    {project.aiNote || AI_ASSISTED_NOTE}
                   </Text>
                 ) : null}
               </View>

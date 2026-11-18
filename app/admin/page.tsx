@@ -594,6 +594,17 @@ export default function AdminPage() {
                     mutate((d) => (d.projects[index].aiAssisted = value))
                   }
                 />
+                {project.aiAssisted ? (
+                  <Area
+                    label="AI note (CV)"
+                    hint="Shown under the project. Use {tool names} to list the AI tools used."
+                    rows={2}
+                    value={project.aiNote ?? ""}
+                    onChange={(value) =>
+                      mutate((d) => (d.projects[index].aiNote = value))
+                    }
+                  />
+                ) : null}
                 <Area
                   label="Tagline"
                   rows={2}

@@ -96,6 +96,8 @@ export interface Project {
   coverTheme: number;
   /** True when AI tools were used to help build the project (shown on the CV). */
   aiAssisted?: boolean;
+  /** Free-text CV note for the AI-assisted build (shown on the CV). */
+  aiNote?: string;
 }
 
 export interface Site {
