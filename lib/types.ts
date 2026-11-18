@@ -41,6 +41,7 @@ export type ExperienceType =
   | "job"
   | "internship"
   | "freelance"
+  | "speaking"
   | "seminar"
   | "training"
   | "volunteer"

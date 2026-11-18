@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Download, Plus, Save, Trash2 } from "lucide-react";
 import { duplicateSlugs, slugify, uniqueSlug } from "@/lib/slug";
-import { experienceTypes } from "@/lib/experience";
+import { experienceFieldLabelsFor, experienceTypes } from "@/lib/experience";
 import type { ExperienceType, Site } from "@/lib/types";
 
 type Mode = "local" | "github" | "locked";
@@ -725,20 +725,12 @@ export default function AdminPage() {
                     </select>
                   </label>
                   <Text
-                    label={
-                      job.type === "seminar" || job.type === "training"
-                        ? "Seminar / training title"
-                        : "Role / title"
-                    }
+                    label={experienceFieldLabelsFor(job.type).role}
                     value={job.role}
                     onChange={(value) => mutate((d) => (d.experience[index].role = value))}
                   />
                   <Text
-                    label={
-                      job.type === "seminar" || job.type === "training"
-                        ? "Organizer / host"
-                        : "Company / organization"
-                    }
+                    label={experienceFieldLabelsFor(job.type).company}
                     value={job.company}
                     onChange={(value) =>
                       mutate((d) => (d.experience[index].company = value))
@@ -769,8 +761,8 @@ export default function AdminPage() {
                   />
                 </div>
                 <Area
-                  label="Bullets"
-                  hint="one per line — responsibilities, takeaways, or topics"
+                  label={experienceFieldLabelsFor(job.type).bullets}
+                  hint="one per line"
                   rows={4}
                   value={job.bullets.join("\n")}
                   onChange={(value) =>
