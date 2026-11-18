@@ -10,6 +10,7 @@ import {
 import ProjectCard from "@/components/ProjectCard";
 import { GithubIcon } from "@/components/BrandIcons";
 import { featuredProjects, profile, site, socials } from "@/lib/content";
+import { experienceTypeLabel } from "@/lib/experience";
 
 function CodeCard() {
   return (
@@ -194,7 +195,7 @@ export default function HomePage() {
               <p className="eyebrow">Background</p>
               <h2 className="section-title">Experience</h2>
               <p className="section-sub">
-                Internships, freelance work, and roles — updated as I go.
+                Internships, seminars, volunteer work, and roles — updated as I go.
               </p>
             </div>
           </div>
@@ -207,8 +208,9 @@ export default function HomePage() {
                     <div>
                       <div className="tl-role">{job.role}</div>
                       <div className="tl-company">
-                        {job.company}
-                        {job.location ? ` · ${job.location}` : ""}
+                        {[experienceTypeLabel(job.type), job.company, job.location]
+                          .filter(Boolean)
+                          .join(" · ")}
                       </div>
                     </div>
                     <div className="tl-date">
@@ -236,10 +238,10 @@ export default function HomePage() {
             </div>
           ) : (
             <div className="empty-state">
-              <strong>No experience entries yet.</strong> I&apos;m currently a
-              Computer Science student at Eclaro Academy, open to internships and
-              junior web development roles. New roles will show up here as they
-              come.
+              <strong>No experience or activities yet.</strong> I&apos;m currently
+              a Computer Science student at Eclaro Academy, open to internships
+              and junior web development roles. Seminars, training, and volunteer
+              work will show up here as they come.
             </div>
           )}
         </div>

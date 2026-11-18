@@ -37,7 +37,19 @@ export interface SkillGroup {
   items: string[];
 }
 
+export type ExperienceType =
+  | "job"
+  | "internship"
+  | "freelance"
+  | "seminar"
+  | "training"
+  | "volunteer"
+  | "organization"
+  | "award"
+  | "other";
+
 export interface Experience {
+  type?: ExperienceType;
   company: string;
   role: string;
   start: string;

@@ -3,6 +3,7 @@ import { Download, Globe, Mail, MapPin, Phone } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
 import Link from "next/link";
 import { portfolioUrl, site } from "@/lib/content";
+import { experienceTypeLabel } from "@/lib/experience";
 
 export const metadata: Metadata = {
   title: "CV",
@@ -115,8 +116,9 @@ export default function CvPage() {
                     <div>
                       <div className="cv-job-role">{job.role}</div>
                       <div className="cv-job-org">
-                        {job.company}
-                        {job.location ? ` · ${job.location}` : ""}
+                        {[experienceTypeLabel(job.type), job.company, job.location]
+                          .filter(Boolean)
+                          .join(" · ")}
                       </div>
                     </div>
                     <div className="cv-job-date">

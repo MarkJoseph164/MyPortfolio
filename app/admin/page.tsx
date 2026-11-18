@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Download, Plus, Save, Trash2 } from "lucide-react";
 import { duplicateSlugs, slugify, uniqueSlug } from "@/lib/slug";
-import type { Site } from "@/lib/types";
+import { experienceTypes } from "@/lib/experience";
+import type { ExperienceType, Site } from "@/lib/types";
 
 type Mode = "local" | "github" | "locked";
 
@@ -656,13 +657,14 @@ export default function AdminPage() {
         </div>
         <div className="panel">
           <div className="panel-head">
-            <span className="panel-title">Experience ({site.experience.length})</span>
+            <span className="panel-title">Experience &amp; activities ({site.experience.length})</span>
             <button
               type="button"
               className="btn btn-ghost btn-sm"
               onClick={() =>
                 mutate((d) => {
                   d.experience.push({
+                    type: "job",
                     company: "",
                     role: "",
                     start: "",
@@ -675,7 +677,7 @@ export default function AdminPage() {
               }
             >
               <Plus />
-              Add role
+              Add experience
             </button>
           </div>
           <div className="panel-body">
@@ -688,7 +690,7 @@ export default function AdminPage() {
             {site.experience.map((job, index) => (
               <details className="subpanel" key={index}>
                 <summary className="subpanel-head" style={{ cursor: "pointer" }}>
-                  <span>{job.role || "New role"}</span>
+                  <span>{job.role || "New experience"}</span>
                   <button
                     type="button"
                     className="link-quiet"
@@ -702,13 +704,41 @@ export default function AdminPage() {
                   </button>
                 </summary>
                 <div className="grid-2" style={{ marginTop: 10 }}>
+                  <label className="field">
+                    <span>Type</span>
+                    <select
+                      className="select"
+                      value={job.type ?? "job"}
+                      onChange={(event) =>
+                        mutate(
+                          (d) =>
+                            (d.experience[index].type = event.target
+                              .value as ExperienceType),
+                        )
+                      }
+                    >
+                      {experienceTypes.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
                   <Text
-                    label="Role"
+                    label={
+                      job.type === "seminar" || job.type === "training"
+                        ? "Seminar / training title"
+                        : "Role / title"
+                    }
                     value={job.role}
                     onChange={(value) => mutate((d) => (d.experience[index].role = value))}
                   />
                   <Text
-                    label="Company"
+                    label={
+                      job.type === "seminar" || job.type === "training"
+                        ? "Organizer / host"
+                        : "Company / organization"
+                    }
                     value={job.company}
                     onChange={(value) =>
                       mutate((d) => (d.experience[index].company = value))
@@ -733,14 +763,14 @@ export default function AdminPage() {
                     }
                   />
                   <Text
-                    label="Tech"
+                    label="Tags / topics"
                     value={job.tech.join(", ")}
                     onChange={(value) => mutate((d) => (d.experience[index].tech = csv(value)))}
                   />
                 </div>
                 <Area
                   label="Bullets"
-                  hint="one per line, start with a verb"
+                  hint="one per line — responsibilities, takeaways, or topics"
                   rows={4}
                   value={job.bullets.join("\n")}
                   onChange={(value) =>

@@ -7,6 +7,7 @@ import {
   View,
 } from "@react-pdf/renderer";
 import type { Site } from "@/lib/types";
+import { experienceTypeLabel } from "@/lib/experience";
 
 const ACCENT = "#a4133c";
 const INK = "#14161c";
@@ -258,8 +259,9 @@ export default function CvDocument({
                   </Text>
                 </View>
                 <Text style={styles.itemSub}>
-                  {job.company}
-                  {job.location ? ` · ${job.location}` : ""}
+                  {[experienceTypeLabel(job.type), job.company, job.location]
+                    .filter(Boolean)
+                    .join(" · ")}
                 </Text>
                 {job.bullets.map((bullet, bulletIndex) => (
                   <View key={bulletIndex} style={styles.bulletRow}>
