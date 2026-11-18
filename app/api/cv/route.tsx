@@ -1,6 +1,6 @@
 import { renderToBuffer } from "@react-pdf/renderer";
 import CvDocument from "@/components/CvDocument";
-import { profile, site } from "@/lib/content";
+import { profile, portfolioUrl, site } from "@/lib/content";
 import { getCvPhotoDataUrl } from "@/lib/cv-photo";
 
 export const runtime = "nodejs";
@@ -18,7 +18,12 @@ function countPages(buffer: Buffer): number {
 
 async function render(photo: string | null, scale: number) {
   return renderToBuffer(
-    <CvDocument site={site} photo={photo} scale={scale} />,
+    <CvDocument
+      site={site}
+      portfolioUrl={portfolioUrl}
+      photo={photo}
+      scale={scale}
+    />,
   );
 }
 

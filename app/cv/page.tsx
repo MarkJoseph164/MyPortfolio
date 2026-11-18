@@ -4,7 +4,7 @@ import Link from "next/link";
 import CvPhoto from "@/components/CvPhoto";
 import CvPrintFit from "@/components/CvPrintFit";
 import { AI_ASSISTED_NOTE } from "@/lib/cv";
-import { site } from "@/lib/content";
+import { portfolioUrl, site } from "@/lib/content";
 import { experienceTypeLabel } from "@/lib/experience";
 
 export const metadata: Metadata = {
@@ -92,6 +92,17 @@ export default function CvPage() {
 
           <section className="cv-section">
             <h3 className="cv-h">Profile</h3>
+            {portfolioUrl ? (
+              <p className="cv-text">
+                Portfolio:{" "}
+                <a
+                  href={portfolioUrl}
+                  style={{ color: "#111111", textDecoration: "underline" }}
+                >
+                  {portfolioUrl}
+                </a>
+              </p>
+            ) : null}
             <p className="cv-text">{profile.summary}</p>
           </section>
 

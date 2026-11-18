@@ -233,10 +233,12 @@ function ContactItem({
 
 export default function CvDocument({
   site,
+  portfolioUrl,
   photo,
   scale = 1,
 }: {
   site: Site;
+  portfolioUrl?: string;
   /** Data URL for the 1×1 photo, or null to render the placeholder frame. */
   photo?: string | null;
   /** Typography scale used to keep the document on one A4 page. */
@@ -309,6 +311,17 @@ export default function CvDocument({
           <Text style={styles.heading} minPresenceAhead={26}>
             Profile
           </Text>
+          {portfolioUrl ? (
+            <Text style={styles.text}>
+              Portfolio:{" "}
+              <Link
+                src={portfolioUrl}
+                style={{ color: MUTED, textDecoration: "underline" }}
+              >
+                {portfolioUrl}
+              </Link>
+            </Text>
+          ) : null}
           <Text style={styles.text}>{profile.summary}</Text>
         </View>
 
