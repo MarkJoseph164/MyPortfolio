@@ -4,7 +4,7 @@ import Link from "next/link";
 import CvPhoto from "@/components/CvPhoto";
 import CvPrintFit from "@/components/CvPrintFit";
 import { AI_ASSISTED_NOTE } from "@/lib/cv";
-import { portfolioUrl, site } from "@/lib/content";
+import { site } from "@/lib/content";
 import { experienceTypeLabel } from "@/lib/experience";
 
 export const metadata: Metadata = {
@@ -36,7 +36,6 @@ export default function CvPage() {
     profile.linkedin
       ? { text: stripUrl(profile.linkedin), href: profile.linkedin }
       : null,
-    portfolioUrl ? { text: stripUrl(portfolioUrl), href: portfolioUrl } : null,
   ].filter(Boolean) as { text: string; href?: string }[];
 
   return (
