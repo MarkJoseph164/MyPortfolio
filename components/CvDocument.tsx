@@ -419,7 +419,20 @@ export default function CvDocument({
                   </Text>
                 ) : null}
                 {project.aiAssisted ? (
-                  <Text style={styles.tech}>{AI_ASSISTED_NOTE}</Text>
+                  <Text style={styles.tech}>
+                    {AI_ASSISTED_NOTE}
+                    {project.url ? (
+                      <>
+                        {" | "}
+                        <Link
+                          src={project.url}
+                          style={{ color: MUTED, textDecoration: "none" }}
+                        >
+                          {project.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+                        </Link>
+                      </>
+                    ) : null}
+                  </Text>
                 ) : null}
                 {project.url ? (
                   <Text style={styles.tech}>

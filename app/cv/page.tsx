@@ -176,7 +176,20 @@ export default function CvPage() {
                     </p>
                   ) : null}
                   {project.aiAssisted ? (
-                    <p className="cv-tech">{AI_ASSISTED_NOTE}</p>
+                    <p className="cv-tech">
+                      {AI_ASSISTED_NOTE}
+                      {project.url ? (
+                        <>
+                          {" | "}
+                          <a
+                            href={project.url}
+                            style={{ color: "#333333", textDecoration: "none" }}
+                          >
+                            {stripUrl(project.url)}
+                          </a>
+                        </>
+                      ) : null}
+                    </p>
                   ) : null}
                   {project.url ? (
                     <p className="cv-tech">{stripUrl(project.url)}</p>
