@@ -94,6 +94,8 @@ export interface Project {
   demo: { label: string; value: string };
   featured: boolean;
   coverTheme: number;
+  /** True when AI tools were used to help build the project (shown on the CV). */
+  aiAssisted?: boolean;
 }
 
 export interface Site {

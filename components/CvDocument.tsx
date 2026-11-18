@@ -417,6 +417,12 @@ export default function CvDocument({
                     Technologies: {project.tech.join(", ")}
                   </Text>
                 ) : null}
+                {project.aiAssisted ? (
+                  <Text style={styles.tech}>
+                    AI tools: used as a development aid for coding, debugging,
+                    and documentation.
+                  </Text>
+                ) : null}
                 {project.url ? (
                   <Text style={styles.tech}>
                     <Link

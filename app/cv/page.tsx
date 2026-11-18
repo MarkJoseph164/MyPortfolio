@@ -179,6 +179,12 @@ export default function CvPage() {
                       Technologies: {project.tech.join(", ")}
                     </p>
                   ) : null}
+                  {project.aiAssisted ? (
+                    <p className="cv-tech">
+                      AI tools: used as a development aid for coding, debugging,
+                      and documentation.
+                    </p>
+                  ) : null}
                   {project.url ? (
                     <p className="cv-tech">{stripUrl(project.url)}</p>
                   ) : null}

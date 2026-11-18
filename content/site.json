@@ -186,7 +186,8 @@
         "value": ""
       },
       "featured": true,
-      "coverTheme": 1
+      "coverTheme": 1,
+      "aiAssisted": true
     },
     {
       "slug": "bookmark",
@@ -225,7 +226,8 @@
         "value": ""
       },
       "featured": true,
-      "coverTheme": 2
+      "coverTheme": 2,
+      "aiAssisted": true
     },
     {
       "slug": "paycore",
@@ -262,7 +264,8 @@
         "value": "demo@paycore.app · DemoPayroll2026"
       },
       "featured": true,
-      "coverTheme": 2
+      "coverTheme": 2,
+      "aiAssisted": true
     },
     {
       "slug": "metallog",
@@ -297,7 +300,8 @@
         "value": ""
       },
       "featured": true,
-      "coverTheme": 1
+      "coverTheme": 1,
+      "aiAssisted": true
     }
   ]
 }

@@ -171,6 +171,7 @@ export default function AdminPage() {
         demo: { label: "", value: "" },
         featured: true,
         coverTheme: 1,
+        aiAssisted: true,
       });
     });
 
@@ -584,6 +585,13 @@ export default function AdminPage() {
                   checked={project.repoPublic}
                   onChange={(value) =>
                     mutate((d) => (d.projects[index].repoPublic = value))
+                  }
+                />
+                <Check
+                  label="AI used as a development tool (noted on the CV)"
+                  checked={Boolean(project.aiAssisted)}
+                  onChange={(value) =>
+                    mutate((d) => (d.projects[index].aiAssisted = value))
                   }
                 />
                 <Area
