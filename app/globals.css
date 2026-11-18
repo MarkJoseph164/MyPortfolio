@@ -1218,7 +1218,7 @@ h4 {
 /* The paper is always white with black ink, independent of the site theme. */
 .cv-paper {
   background: #ffffff;
-  color: #1b1b1b;
+  color: #111111;
   width: 210mm;
   max-width: 100%;
   min-height: 297mm;
@@ -1264,7 +1264,7 @@ h4 {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #333333;
+  color: #222222;
   margin-top: 4px;
 }
 
@@ -1301,7 +1301,7 @@ h4 {
   gap: 3px 16px;
   margin-top: 10px;
   font-size: 0.72rem;
-  color: #333333;
+  color: #222222;
 }
 
 .cv-contact-item {
@@ -1311,7 +1311,7 @@ h4 {
 }
 
 .cv-contact a {
-  color: #333333;
+  color: #222222;
   text-decoration: none;
 }
 
@@ -1343,7 +1343,7 @@ h4 {
 .cv-text {
   font-size: 0.78rem;
   line-height: 1.5;
-  color: #1f1f1f;
+  color: #111111;
 }
 
 .cv-entry {
@@ -1370,19 +1370,19 @@ h4 {
 
 .cv-entry-sub {
   font-size: 0.77rem;
-  color: #333333;
+  color: #222222;
 }
 
 .cv-entry-date {
   font-size: 0.7rem;
-  color: #444444;
+  color: #333333;
   white-space: nowrap;
 }
 
 .cv-entry-note {
   font-size: 0.755rem;
   line-height: 1.45;
-  color: #3d3d3d;
+  color: #2e2e2e;
   margin-top: 2px;
 }
 
@@ -1397,7 +1397,7 @@ h4 {
   padding-left: 11px;
   font-size: 0.765rem;
   line-height: 1.45;
-  color: #1f1f1f;
+  color: #111111;
 }
 
 .cv-bullets li::before {
@@ -1429,17 +1429,17 @@ h4 {
 }
 
 .cv-skill-val {
-  color: #1f1f1f;
+  color: #111111;
 }
 
 .cv-proj-sub {
   font-size: 0.77rem;
-  color: #333333;
+  color: #222222;
 }
 
 .cv-tech {
   font-size: 0.71rem;
-  color: #444444;
+  color: #333333;
   margin-top: 2px;
 }
 
@@ -1457,7 +1457,7 @@ h4 {
 .cv-references {
   margin-top: 18px;
   font-size: 0.71rem;
-  color: #444444;
+  color: #333333;
 }
 
 @media (max-width: 520px) {
