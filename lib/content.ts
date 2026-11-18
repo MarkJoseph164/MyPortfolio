@@ -30,3 +30,6 @@ export const portfolioUrl =
   profile.website || (isLocal ? "" : envSiteUrl) || "https://myportfolio-app-eta.vercel.app";
 
 export type SocialKey = (typeof socials)[number]["key"];
+
+// redeploy-trigger: CV text cleanup
+// redeploy-trigger: CV text cleanup
