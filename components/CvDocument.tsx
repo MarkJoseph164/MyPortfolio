@@ -10,7 +10,7 @@ import {
 import type { Site } from "@/lib/types";
 import { experienceTypeLabel } from "@/lib/experience";
 
-/* Greyscale only — this document is meant to be printed and photocopied. */
+/* Greyscale document design. The photo keeps its original colour. */
 const INK = "#000000";
 const BODY = "#2e2e2e";
 const SUB = "#3c3c3c";
@@ -18,187 +18,207 @@ const MUTED = "#565656";
 const RULE = "#d4d4d4";
 const FRAME = "#cfcfcf";
 
-const styles = StyleSheet.create({
-  page: {
-    paddingTop: 40,
-    paddingBottom: 34,
-    paddingHorizontal: 44,
-    fontFamily: "Helvetica",
-    fontSize: 9.2,
-    color: BODY,
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-  },
-  headerMain: {
-    flex: 1,
-    paddingRight: 16,
-  },
-  name: {
-    fontFamily: "Times-Bold",
-    fontSize: 23,
-    lineHeight: 1.05,
-    color: INK,
-  },
-  role: {
-    fontFamily: "Helvetica-Bold",
-    fontSize: 9.6,
-    lineHeight: 1.3,
-    color: SUB,
-    letterSpacing: 0.2,
-    marginTop: 3,
-  },
-  contact: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    marginTop: 7,
-  },
-  contactItem: {
-    fontSize: 8.1,
-    lineHeight: 1.5,
-    color: MUTED,
-    marginRight: 7,
-  },
-  photoFrame: {
-    width: 70,
-    height: 70,
-    borderWidth: 0.8,
-    borderColor: FRAME,
-    borderStyle: "solid",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  photo: {
-    width: 70,
-    height: 70,
-    objectFit: "cover",
-  },
-  photoPlaceholder: {
-    fontSize: 6,
-    letterSpacing: 1,
-    color: "#8a8a8a",
-    textAlign: "center",
-  },
-  rule: {
-    height: 1,
-    backgroundColor: RULE,
-    marginTop: 13,
-  },
-  section: {
-    marginTop: 10,
-  },
-  heading: {
-    fontFamily: "Helvetica-Bold",
-    fontSize: 7.4,
-    letterSpacing: 1.2,
-    color: INK,
-    textTransform: "uppercase",
-    borderBottomWidth: 0.8,
-    borderBottomColor: RULE,
-    paddingBottom: 2.5,
-    marginBottom: 5,
-  },
-  text: {
-    fontSize: 8.7,
-    lineHeight: 1.5,
-    color: BODY,
-  },
-  skillRow: {
-    flexDirection: "row",
-    marginBottom: 2,
-  },
-  skillKey: {
-    width: 112,
-    fontFamily: "Helvetica-Bold",
-    fontSize: 8.4,
-    color: INK,
-  },
-  skillVal: {
-    flex: 1,
-    fontSize: 8.4,
-    color: BODY,
-  },
-  item: {
-    marginBottom: 8,
-  },
-  itemHead: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "baseline",
-  },
-  itemTitle: {
-    fontFamily: "Helvetica-Bold",
-    fontSize: 9,
-    color: INK,
-  },
-  itemMeta: {
-    fontSize: 7.8,
-    color: MUTED,
-  },
-  itemSub: {
-    fontSize: 8.3,
-    color: SUB,
-  },
-  itemDesc: {
-    fontSize: 8.3,
-    lineHeight: 1.45,
-    color: BODY,
-    marginTop: 1.5,
-  },
-  tech: {
-    fontSize: 7.6,
-    color: MUTED,
-    marginTop: 1.5,
-  },
-  bulletRow: {
-    flexDirection: "row",
-    marginTop: 1,
-  },
-  bulletDot: {
-    width: 8,
-    fontSize: 8,
-    color: "#666666",
-  },
-  bulletText: {
-    flex: 1,
-    fontSize: 8.3,
-    lineHeight: 1.42,
-    color: BODY,
-  },
-  eduRow: {
-    flexDirection: "row",
-    marginBottom: 6,
-  },
-  eduDate: {
-    width: 78,
-    fontFamily: "Helvetica-Bold",
-    fontSize: 7.8,
-    color: MUTED,
-  },
-  eduBody: {
-    flex: 1,
-  },
-  references: {
-    fontSize: 7.4,
-    color: MUTED,
-    marginTop: 14,
-  },
-  footer: {
-    position: "absolute",
-    bottom: 16,
-    left: 44,
-    right: 44,
-    fontSize: 6.6,
-    color: "#8a8a8a",
-    textAlign: "center",
-  },
-});
+/**
+ * `scale` shrinks typography and spacing so the CV fits one A4 page.
+ * 1 = designed size; the route lowers it until the document is a single page.
+ */
+function makeStyles(k: number) {
+  const n = (value: number) => Math.round(value * k * 10) / 10;
 
-function ContactItem({ text, href }: { text: string; href?: string }) {
+  return StyleSheet.create({
+    page: {
+      paddingTop: n(34),
+      paddingBottom: n(42),
+      paddingHorizontal: n(40),
+      fontFamily: "Helvetica",
+      fontSize: n(9.2),
+      color: BODY,
+    },
+    header: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+    },
+    headerMain: {
+      flex: 1,
+      paddingRight: n(14),
+    },
+    name: {
+      fontFamily: "Times-Bold",
+      fontSize: n(22),
+      lineHeight: 1.05,
+      color: INK,
+    },
+    role: {
+      fontFamily: "Helvetica-Bold",
+      fontSize: n(9.4),
+      lineHeight: 1.3,
+      color: SUB,
+      letterSpacing: 0.2,
+      marginTop: n(3),
+    },
+    contact: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      marginTop: n(6),
+    },
+    contactItem: {
+      fontSize: n(8),
+      lineHeight: 1.5,
+      color: MUTED,
+      marginRight: n(7),
+    },
+    photoFrame: {
+      width: n(68),
+      height: n(68),
+      borderWidth: 0.8,
+      borderColor: FRAME,
+      borderStyle: "solid",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    photo: {
+      width: n(68),
+      height: n(68),
+      objectFit: "cover",
+    },
+    photoPlaceholder: {
+      fontSize: n(6),
+      letterSpacing: 1,
+      color: "#8a8a8a",
+      textAlign: "center",
+    },
+    rule: {
+      height: 1,
+      backgroundColor: RULE,
+      marginTop: n(12),
+    },
+    section: {
+      marginTop: n(9),
+    },
+    heading: {
+      fontFamily: "Helvetica-Bold",
+      fontSize: n(7.3),
+      letterSpacing: 1.2,
+      color: INK,
+      textTransform: "uppercase",
+      borderBottomWidth: 0.8,
+      borderBottomColor: RULE,
+      paddingBottom: n(2.4),
+      marginBottom: n(4.5),
+    },
+    text: {
+      fontSize: n(8.6),
+      lineHeight: 1.45,
+      color: BODY,
+    },
+    skillRow: {
+      flexDirection: "row",
+      marginBottom: n(2),
+    },
+    skillKey: {
+      width: n(110),
+      fontFamily: "Helvetica-Bold",
+      fontSize: n(8.3),
+      color: INK,
+    },
+    skillVal: {
+      flex: 1,
+      fontSize: n(8.3),
+      color: BODY,
+    },
+    item: {
+      marginBottom: n(7),
+    },
+    itemHead: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "baseline",
+    },
+    itemTitle: {
+      fontFamily: "Helvetica-Bold",
+      fontSize: n(8.9),
+      color: INK,
+    },
+    itemMeta: {
+      fontSize: n(7.7),
+      color: MUTED,
+    },
+    itemSub: {
+      fontSize: n(8.2),
+      color: SUB,
+    },
+    itemDesc: {
+      fontSize: n(8.2),
+      lineHeight: 1.4,
+      color: BODY,
+      marginTop: n(1.5),
+    },
+    tech: {
+      fontSize: n(7.5),
+      color: MUTED,
+      marginTop: n(1.5),
+    },
+    bulletRow: {
+      flexDirection: "row",
+      marginTop: n(1),
+    },
+    bulletDot: {
+      width: n(8),
+      fontSize: n(8),
+      color: "#666666",
+    },
+    bulletText: {
+      flex: 1,
+      fontSize: n(8.2),
+      lineHeight: 1.38,
+      color: BODY,
+    },
+    eduRow: {
+      flexDirection: "row",
+      marginBottom: n(5),
+    },
+    eduDate: {
+      width: n(76),
+      fontFamily: "Helvetica-Bold",
+      fontSize: n(7.7),
+      color: MUTED,
+    },
+    eduBody: {
+      flex: 1,
+    },
+    references: {
+      fontSize: n(7.3),
+      color: MUTED,
+      marginTop: n(11),
+    },
+    footerBar: {
+      position: "absolute",
+      bottom: n(15),
+      left: n(40),
+      right: n(40),
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    footerText: {
+      fontSize: n(6.6),
+      color: "#8a8a8a",
+    },
+  });
+}
+
+function ContactItem({
+  text,
+  href,
+  style,
+}: {
+  text: string;
+  href?: string;
+  style: ReturnType<typeof makeStyles>["contactItem"];
+}) {
   return (
-    <Text style={styles.contactItem}>
+    <Text style={style}>
       {href ? (
         <Link src={href} style={{ color: MUTED, textDecoration: "none" }}>
           {text}
@@ -214,12 +234,16 @@ export default function CvDocument({
   site,
   portfolioUrl,
   photo,
+  scale = 1,
 }: {
   site: Site;
   portfolioUrl?: string;
   /** Data URL for the 1×1 photo, or null to render the placeholder frame. */
   photo?: string | null;
+  /** Typography scale used to keep the document on one A4 page. */
+  scale?: number;
 }) {
+  const styles = makeStyles(scale);
   const { profile, skills, experience, education, certifications, languages } =
     site;
   const projects = site.projects;
@@ -283,6 +307,7 @@ export default function CvDocument({
                   key={`${item.text}-${index}`}
                   text={`${index > 0 ? "· " : ""}${item.text}`}
                   href={item.href}
+                  style={styles.contactItem}
                 />
               ))}
             </View>
@@ -300,13 +325,17 @@ export default function CvDocument({
         <View style={styles.rule} />
 
         <View style={styles.section}>
-          <Text style={styles.heading}>Profile</Text>
+          <Text style={styles.heading} minPresenceAhead={26}>
+            Profile
+          </Text>
           <Text style={styles.text}>{profile.summary}</Text>
         </View>
 
         {education.length > 0 ? (
           <View style={styles.section}>
-            <Text style={styles.heading}>Education</Text>
+            <Text style={styles.heading} minPresenceAhead={26}>
+              Education
+            </Text>
             {education.map((entry, index) => (
               <View
                 key={`${entry.school}-${index}`}
@@ -330,7 +359,9 @@ export default function CvDocument({
 
         {experience.length > 0 ? (
           <View style={styles.section}>
-            <Text style={styles.heading}>Experience &amp; Activities</Text>
+            <Text style={styles.heading} minPresenceAhead={26}>
+              Experience &amp; Activities
+            </Text>
             {experience.map((job, index) => (
               <View
                 key={`${job.company}-${index}`}
@@ -366,7 +397,9 @@ export default function CvDocument({
 
         {projects.length > 0 ? (
           <View style={styles.section}>
-            <Text style={styles.heading}>Projects</Text>
+            <Text style={styles.heading} minPresenceAhead={26}>
+              Projects
+            </Text>
             {projects.map((project) => (
               <View key={project.slug} style={styles.item} wrap={false}>
                 <View style={styles.itemHead}>
@@ -401,7 +434,9 @@ export default function CvDocument({
 
         {skills.length > 0 ? (
           <View style={styles.section}>
-            <Text style={styles.heading}>Technical Skills</Text>
+            <Text style={styles.heading} minPresenceAhead={26}>
+              Technical Skills
+            </Text>
             {skills.map((group) => (
               <View key={group.group} style={styles.skillRow} wrap={false}>
                 <Text style={styles.skillKey}>{group.group}</Text>
@@ -413,7 +448,9 @@ export default function CvDocument({
 
         {certifications.length > 0 ? (
           <View style={styles.section}>
-            <Text style={styles.heading}>Certifications &amp; Awards</Text>
+            <Text style={styles.heading} minPresenceAhead={26}>
+              Certifications &amp; Awards
+            </Text>
             {certifications.map((cert, index) => (
               <View
                 key={`${cert.name}-${index}`}
@@ -449,9 +486,17 @@ export default function CvDocument({
 
         <Text style={styles.references}>References available upon request.</Text>
 
-        <Text style={styles.footer} fixed>
-          {profile.name} · {profile.email}
-        </Text>
+        <View style={styles.footerBar} fixed>
+          <Text style={styles.footerText}>
+            {profile.name} · {profile.email}
+          </Text>
+          <Text
+            style={styles.footerText}
+            render={({ pageNumber, totalPages }) =>
+              totalPages > 1 ? `${pageNumber} / ${totalPages}` : ""
+            }
+          />
+        </View>
       </Page>
     </Document>
   );

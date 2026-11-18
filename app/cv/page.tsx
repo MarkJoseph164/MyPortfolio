@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Download } from "lucide-react";
 import Link from "next/link";
 import CvPhoto from "@/components/CvPhoto";
+import CvPrintFit from "@/components/CvPrintFit";
 import { portfolioUrl, site } from "@/lib/content";
 import { experienceTypeLabel } from "@/lib/experience";
 
@@ -67,6 +68,7 @@ export default function CvPage() {
         </div>
 
         <article className="cv-paper">
+          <CvPrintFit />
           <header className="cv-head">
             <div className="cv-head-main">
               <h2 className="cv-name">{profile.name}</h2>
