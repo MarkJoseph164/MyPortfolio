@@ -263,6 +263,41 @@
       },
       "featured": true,
       "coverTheme": 2
+    },
+    {
+      "slug": "metallog",
+      "name": "MetalLog",
+      "subtitle": "Metal Detector Web base Log",
+      "tagline": "",
+      "role": "Academic project",
+      "year": "2026",
+      "status": "wip",
+      "url": "",
+      "repo": "",
+      "repoPublic": false,
+      "tech": [
+        "ESP32",
+        "C++",
+        "Flask",
+        "Python",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "PostgreSQL"
+      ],
+      "summary": "MetaLog is an ESP32-based metal detection system designed to improve campus security through automated detection and monitoring.",
+      "description": [
+        "It uses a web dashboard to monitor detections, record incidents, and manage security reports."
+      ],
+      "features": [],
+      "challenge": "",
+      "screenshots": [],
+      "demo": {
+        "label": "",
+        "value": ""
+      },
+      "featured": true,
+      "coverTheme": 1
     }
   ]
 }
