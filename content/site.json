@@ -1,0 +1,249 @@
+{
+  "profile": {
+    "name": "Mark Joseph A. Alborez",
+    "displayName": "Mark Joseph Alborez",
+    "title": "Computer Science Student · Aspiring Web Developer",
+    "headline": "I build web apps that solve real problems.",
+    "location": "Quezon City, Philippines",
+    "availability": "Open to internships and junior developer roles",
+    "email": "markjosephalborez@gmail.com",
+    "phone": "+63 970 834 7550",
+    "showPhone": true,
+    "github": "https://github.com/MarkJoseph164",
+    "linkedin": "",
+    "facebook": "",
+    "website": "",
+    "summary": "Computer Science student at Eclaro Academy who learns by shipping. I build web applications end to end — from data models and API routes to the interface people actually click — and I care about the details that make a project feel finished rather than functional.",
+    "facts": [
+      {
+        "label": "Focus",
+        "value": "Full-stack web"
+      },
+      {
+        "label": "Studying",
+        "value": "BS Computer Science"
+      },
+      {
+        "label": "Based in",
+        "value": "Quezon City"
+      }
+    ],
+    "strengths": [
+      "Fast learner",
+      "Adaptability",
+      "Problem solving",
+      "Continuous learning"
+    ]
+  },
+  "skills": [
+    {
+      "group": "Languages",
+      "items": [
+        "JavaScript (ES6+)",
+        "TypeScript",
+        "Python",
+        "Java",
+        "HTML5",
+        "CSS3"
+      ]
+    },
+    {
+      "group": "Frontend",
+      "items": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Zustand",
+        "React Context",
+        "React Hooks",
+        "Responsive design"
+      ]
+    },
+    {
+      "group": "Backend & data",
+      "items": [
+        "Node.js",
+        "Python (Flask)",
+        "REST APIs",
+        "JSON"
+      ]
+    },
+    {
+      "group": "3D & interaction",
+      "items": [
+        "Three.js",
+        "React Three Fiber",
+        "Drei"
+      ]
+    },
+    {
+      "group": "Desktop",
+      "items": [
+        "Python Tkinter",
+        "tkcalendar",
+        "Pillow (PIL)"
+      ]
+    },
+    {
+      "group": "Tools",
+      "items": [
+        "Git",
+        "GitHub",
+        "Vercel",
+        "npm",
+        "VS Code"
+      ]
+    }
+  ],
+  "experience": [],
+  "education": [
+    {
+      "school": "Eclaro Academy",
+      "program": "BS Computer Science",
+      "start": "2023",
+      "end": "Present",
+      "note": "Current students are learning the fundamentals of web development, data structures, algorithms, and programming."
+    },
+    {
+      "school": "Eclaro Academy",
+      "program": "Senior High School — GAS Strand",
+      "start": "2021",
+      "end": "2023",
+      "note": "General Academic Strand."
+    },
+    {
+      "school": "Judge Feliciano Belmonte Sr. High School",
+      "program": "Junior High School",
+      "start": "2017",
+      "end": "2021",
+      "note": ""
+    },
+    {
+      "school": "Old Balara Elementary School",
+      "program": "Elementary School",
+      "start": "2011",
+      "end": "2017",
+      "note": ""
+    }
+  ],
+  "certifications": [],
+  "languages": [
+    "Filipino — native",
+    "English — professional"
+  ],
+  "projects": [
+    {
+      "slug": "lakbay",
+      "name": "Lakbay",
+      "subtitle": "Airline Reservation System",
+      "tagline": "A web-based airline reservation system covering flight management, passenger booking, seat selection, and reservation management.",
+      "role": "Academic project",
+      "year": "2023",
+      "status": "auto",
+      "url": "https://airline-reservation-system-luib.vercel.app/",
+      "repo": "",
+      "repoPublic": false,
+      "tech": [
+        "React",
+        "Vite",
+        "JavaScript",
+        "Java"
+      ],
+      "summary": "Lakbay handles the full booking flow of an airline — from searching flights to picking a seat and managing the reservation afterward.",
+      "description": [
+        "Lakbay is a web-based airline reservation system built as an academic project. It covers the booking flow end to end: browsing available flights, booking for a passenger, choosing a seat, and reviewing or updating reservations.",
+        "The system also includes a management side for flight data, so schedules and seat availability can be kept in sync with what customers see when they book."
+      ],
+      "features": [
+        "Flight search and flight management",
+        "Passenger booking",
+        "Seat selection",
+        "Reservation management"
+      ],
+      "challenge": "",
+      "screenshots": [],
+      "demo": {
+        "label": "",
+        "value": ""
+      },
+      "featured": true,
+      "coverTheme": 1
+    },
+    {
+      "slug": "bookmark",
+      "name": "BookMark",
+      "subtitle": "Online Bookstore",
+      "tagline": "An online bookstore with user accounts, a browsable catalog, a shopping cart, and order processing.",
+      "role": "Academic project",
+      "year": "2024",
+      "status": "auto",
+      "url": "https://online-bookstore-akky.vercel.app/",
+      "repo": "",
+      "repoPublic": false,
+      "tech": [
+        "React",
+        "Vite",
+        "JavaScript",
+        "HTML5",
+        "CSS3"
+      ],
+      "summary": "BookMark is a bookstore where users can create an account, browse the catalog, add books to a cart, and check out.",
+      "description": [
+        "BookMark is an online bookstore application built as an academic project. Customers create an account, browse a catalog of books, add items to a shopping cart, and complete an order.",
+        "On the admin side, the catalog and inventory are managed so that stock levels and listings stay accurate as orders come in."
+      ],
+      "features": [
+        "User authentication",
+        "Book catalog management",
+        "Shopping cart",
+        "Order processing",
+        "Inventory management"
+      ],
+      "challenge": "",
+      "screenshots": [],
+      "demo": {
+        "label": "",
+        "value": ""
+      },
+      "featured": true,
+      "coverTheme": 2
+    },
+    {
+      "slug": "paycore",
+      "name": "PayCore",
+      "subtitle": "Automated Payroll System",
+      "tagline": "A payroll workspace for Philippine teams — attendance, deductions, and payslips in one calm place.",
+      "role": "Academic project",
+      "year": "2025",
+      "status": "auto",
+      "url": "https://paycore-ecru.vercel.app/",
+      "repo": "",
+      "repoPublic": false,
+      "tech": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "summary": "PayCore is a payroll workspace for Philippine teams, covering attendance, deductions, and payslips with separate views for owners, administrators, and employees.",
+      "description": [
+        "PayCore keeps the whole pay run in one place: attendance, deductions, and payslips, with each person signing in to the view that belongs to them. Owners and administrators handle the records; employees see their own payslips.",
+        "New accounts and password resets are verified with six-digit email codes, and every pay run is built to stay auditable when someone asks questions later. A sample workspace lets visitors explore the workflow without creating an account."
+      ],
+      "features": [
+        "Role-based sign in for owners, admins, and employees",
+        "Six-digit email verification for new accounts and resets",
+        "Attendance and deduction tracking",
+        "Payslip generation and sending",
+        "Sample demo workspace"
+      ],
+      "challenge": "",
+      "screenshots": [],
+      "demo": {
+        "label": "Try the demo workspace",
+        "value": "demo@paycore.app · DemoPayroll2026"
+      },
+      "featured": true,
+      "coverTheme": 2
+    }
+  ]
+}
