@@ -1312,7 +1312,7 @@ h4 {
 
 .cv-contact a {
   color: #222222;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .cv-contact a:hover {

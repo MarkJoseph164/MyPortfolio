@@ -221,7 +221,7 @@ function ContactItem({
   return (
     <Text style={style}>
       {href ? (
-        <Link src={href} style={{ color: MUTED, textDecoration: "none" }}>
+        <Link src={href} style={{ color: MUTED, textDecoration: "underline" }}>
           {text}
         </Link>
       ) : (

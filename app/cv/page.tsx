@@ -93,17 +93,6 @@ export default function CvPage() {
 
           <section className="cv-section">
             <h3 className="cv-h">Profile</h3>
-            {portfolioUrl ? (
-              <p className="cv-text">
-                Portfolio:{" "}
-                <a
-                  href={portfolioUrl}
-                  style={{ color: "#111111", textDecoration: "underline" }}
-                >
-                  {portfolioUrl}
-                </a>
-              </p>
-            ) : null}
             <p className="cv-text">{profile.summary}</p>
           </section>
 
