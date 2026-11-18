@@ -330,9 +330,7 @@ export default function CvDocument({
             Profile
           </Text>
           {portfolioUrl ? (
-            <Text style={styles.text}>
-              Portfolio: {portfolioUrl.replace(/^https?:\/\//, "")}
-            </Text>
+            <Text style={styles.text}>Portfolio: {portfolioUrl}</Text>
           ) : null}
           <Text style={styles.text}>{profile.summary}</Text>
         </View>

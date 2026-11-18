@@ -26,6 +26,7 @@ export const socials = [
 const envSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 const isLocal = /localhost|127\.0\.0\.1|0\.0\.0\.0/.test(envSiteUrl);
 
-export const portfolioUrl = profile.website || (isLocal ? "" : envSiteUrl);
+export const portfolioUrl =
+  profile.website || (isLocal ? "" : envSiteUrl) || "https://myportfolio-app-eta.vercel.app";
 
 export type SocialKey = (typeof socials)[number]["key"];

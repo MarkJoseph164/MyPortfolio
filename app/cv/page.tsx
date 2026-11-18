@@ -95,7 +95,7 @@ export default function CvPage() {
             <h3 className="cv-h">Profile</h3>
             {portfolioUrl ? (
               <p className="cv-text">
-                Portfolio: {stripUrl(portfolioUrl)}
+                Portfolio: {portfolioUrl}
               </p>
             ) : null}
             <p className="cv-text">{profile.summary}</p>
