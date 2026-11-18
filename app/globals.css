@@ -1264,7 +1264,7 @@ h4 {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #3a3a3a;
+  color: #333333;
   margin-top: 4px;
 }
 
@@ -1301,7 +1301,7 @@ h4 {
   gap: 3px 16px;
   margin-top: 10px;
   font-size: 0.72rem;
-  color: #3c3c3c;
+  color: #333333;
 }
 
 .cv-contact-item {
@@ -1311,7 +1311,7 @@ h4 {
 }
 
 .cv-contact a {
-  color: #3c3c3c;
+  color: #333333;
   text-decoration: none;
 }
 
@@ -1343,7 +1343,7 @@ h4 {
 .cv-text {
   font-size: 0.78rem;
   line-height: 1.5;
-  color: #2e2e2e;
+  color: #1f1f1f;
 }
 
 .cv-entry {
@@ -1370,19 +1370,19 @@ h4 {
 
 .cv-entry-sub {
   font-size: 0.77rem;
-  color: #3c3c3c;
+  color: #333333;
 }
 
 .cv-entry-date {
   font-size: 0.7rem;
-  color: #565656;
+  color: #444444;
   white-space: nowrap;
 }
 
 .cv-entry-note {
   font-size: 0.755rem;
   line-height: 1.45;
-  color: #4a4a4a;
+  color: #3d3d3d;
   margin-top: 2px;
 }
 
@@ -1397,7 +1397,7 @@ h4 {
   padding-left: 11px;
   font-size: 0.765rem;
   line-height: 1.45;
-  color: #2e2e2e;
+  color: #1f1f1f;
 }
 
 .cv-bullets li::before {
@@ -1429,17 +1429,17 @@ h4 {
 }
 
 .cv-skill-val {
-  color: #2e2e2e;
+  color: #1f1f1f;
 }
 
 .cv-proj-sub {
   font-size: 0.77rem;
-  color: #4a4a4a;
+  color: #333333;
 }
 
 .cv-tech {
   font-size: 0.71rem;
-  color: #565656;
+  color: #444444;
   margin-top: 2px;
 }
 
@@ -1457,7 +1457,7 @@ h4 {
 .cv-references {
   margin-top: 18px;
   font-size: 0.71rem;
-  color: #565656;
+  color: #444444;
 }
 
 @media (max-width: 520px) {

@@ -13,9 +13,9 @@ import { AI_ASSISTED_NOTE } from "@/lib/cv";
 
 /* Greyscale document design. The photo keeps its original colour. */
 const INK = "#000000";
-const BODY = "#2e2e2e";
-const SUB = "#3c3c3c";
-const MUTED = "#565656";
+const BODY = "#1f1f1f";
+const SUB = "#333333";
+const MUTED = "#444444";
 const RULE = "#d4d4d4";
 const FRAME = "#cfcfcf";
 
