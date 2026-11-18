@@ -95,7 +95,26 @@
       ]
     }
   ],
-  "experience": [],
+  "experience": [
+    {
+      "type": "speaking",
+      "role": "Will AI Replace You? Truth, Fear, & What Actually Happens",
+      "company": "Ms. Avegel P. Niegas",
+      "start": "17 Oct 2026",
+      "end": "",
+      "location": "Eclaro Academy",
+      "bullets": [
+        "Explained the truth about AI — what it really is and what it can actually do",
+        "Unpacked why people fear losing their jobs to AI, and where that fear comes from",
+        "Showed what actually happens to jobs and work as AI tools keep improving"
+      ],
+      "tech": [
+        "Artificial Intelligence",
+        "Future of Work",
+        "Career Awareness"
+      ]
+    }
+  ],
   "education": [
     {
       "school": "Eclaro Academy",
