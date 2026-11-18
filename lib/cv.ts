@@ -3,4 +3,4 @@
  * Kept in one place so the web page and the PDF never drift apart.
  */
 export const AI_ASSISTED_NOTE =
-  "AI tools: used only as an aid to help and improve development.";
+  "AI tools: OpenCode · Claude Code — used only as an aid to help and improve development.";
