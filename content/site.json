@@ -271,7 +271,7 @@
       "tagline": "",
       "role": "Academic project",
       "year": "2026",
-      "status": "wip",
+      "status": "auto",
       "url": "",
       "repo": "",
       "repoPublic": false,
@@ -285,7 +285,7 @@
         "JavaScript",
         "PostgreSQL"
       ],
-      "summary": "MetaLog is an ESP32-based metal detection system designed to improve campus security through automated detection and monitoring.",
+      "summary": "METALOG is an ESP32-based metal detection system designed to improve campus security trough automated detection and monitoring.",
       "description": [
         "It uses a web dashboard to monitor detections, record incidents, and manage security reports."
       ],
