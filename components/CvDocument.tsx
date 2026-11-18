@@ -66,7 +66,7 @@ function makeStyles(k: number) {
       fontSize: n(8),
       lineHeight: 1.5,
       color: MUTED,
-      marginRight: n(7),
+      marginRight: n(13),
     },
     photoFrame: {
       width: n(68),
@@ -305,7 +305,7 @@ export default function CvDocument({
               {contacts.map((item, index) => (
                 <ContactItem
                   key={`${item.text}-${index}`}
-                  text={`${index > 0 ? "· " : ""}${item.text}`}
+                  text={item.text}
                   href={item.href}
                   style={styles.contactItem}
                 />

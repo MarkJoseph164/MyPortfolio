@@ -1298,7 +1298,7 @@ h4 {
 .cv-contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 0;
+  gap: 3px 16px;
   margin-top: 10px;
   font-size: 0.72rem;
   color: #3c3c3c;
@@ -1308,10 +1308,6 @@ h4 {
   display: inline-flex;
   align-items: baseline;
   gap: 7px;
-}
-
-.cv-contact-sep {
-  color: #9a9a9a;
 }
 
 .cv-contact a {

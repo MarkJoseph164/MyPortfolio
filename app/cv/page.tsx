@@ -74,13 +74,8 @@ export default function CvPage() {
               <h2 className="cv-name">{profile.name}</h2>
               <p className="cv-role">{profile.title}</p>
               <div className="cv-contact">
-                {contacts.map((item, index) => (
+                {contacts.map((item) => (
                   <span className="cv-contact-item" key={item.text}>
-                    {index > 0 ? (
-                      <span className="cv-contact-sep" aria-hidden>
-                        ·
-                      </span>
-                    ) : null}
                     {item.href ? (
                       <a href={item.href}>{item.text}</a>
                     ) : (
