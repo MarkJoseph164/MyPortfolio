@@ -33,6 +33,7 @@ export default function CvPage() {
     profile.github
       ? { text: stripUrl(profile.github), href: profile.github }
       : null,
+    portfolioUrl ? { text: portfolioUrl, href: portfolioUrl } : null,
     profile.linkedin
       ? { text: stripUrl(profile.linkedin), href: profile.linkedin }
       : null,
@@ -92,17 +93,6 @@ export default function CvPage() {
 
           <section className="cv-section">
             <h3 className="cv-h">Profile</h3>
-            {portfolioUrl ? (
-              <p className="cv-text">
-                Portfolio:{" "}
-                <a
-                  href={portfolioUrl}
-                  style={{ color: "#111111", textDecoration: "underline" }}
-                >
-                  {portfolioUrl}
-                </a>
-              </p>
-            ) : null}
             <p className="cv-text">{profile.summary}</p>
           </section>
 

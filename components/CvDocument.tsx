@@ -262,6 +262,7 @@ export default function CvDocument({
           },
         ]
       : []),
+    ...(portfolioUrl ? [{ text: portfolioUrl, href: portfolioUrl }] : []),
     ...(profile.linkedin
       ? [
           {
@@ -311,17 +312,6 @@ export default function CvDocument({
           <Text style={styles.heading} minPresenceAhead={26}>
             Profile
           </Text>
-          {portfolioUrl ? (
-            <Text style={styles.text}>
-              Portfolio:{" "}
-              <Link
-                src={portfolioUrl}
-                style={{ color: MUTED, textDecoration: "underline" }}
-              >
-                {portfolioUrl}
-              </Link>
-            </Text>
-          ) : null}
           <Text style={styles.text}>{profile.summary}</Text>
         </View>
 
