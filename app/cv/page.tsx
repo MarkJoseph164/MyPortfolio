@@ -3,6 +3,7 @@ import { Download } from "lucide-react";
 import Link from "next/link";
 import CvPhoto from "@/components/CvPhoto";
 import CvPrintFit from "@/components/CvPrintFit";
+import { AI_ASSISTED_NOTE } from "@/lib/cv";
 import { portfolioUrl, site } from "@/lib/content";
 import { experienceTypeLabel } from "@/lib/experience";
 
@@ -175,10 +176,7 @@ export default function CvPage() {
                     </p>
                   ) : null}
                   {project.aiAssisted ? (
-                    <p className="cv-tech">
-                      AI tools: used as a development aid for coding, debugging,
-                      and documentation.
-                    </p>
+                    <p className="cv-tech">{AI_ASSISTED_NOTE}</p>
                   ) : null}
                   {project.url ? (
                     <p className="cv-tech">{stripUrl(project.url)}</p>

@@ -9,6 +9,7 @@ import {
 } from "@react-pdf/renderer";
 import type { Site } from "@/lib/types";
 import { experienceTypeLabel } from "@/lib/experience";
+import { AI_ASSISTED_NOTE } from "@/lib/cv";
 
 /* Greyscale document design. The photo keeps its original colour. */
 const INK = "#000000";
@@ -418,10 +419,7 @@ export default function CvDocument({
                   </Text>
                 ) : null}
                 {project.aiAssisted ? (
-                  <Text style={styles.tech}>
-                    AI tools: used as a development aid for coding, debugging,
-                    and documentation.
-                  </Text>
+                  <Text style={styles.tech}>{AI_ASSISTED_NOTE}</Text>
                 ) : null}
                 {project.url ? (
                   <Text style={styles.tech}>
