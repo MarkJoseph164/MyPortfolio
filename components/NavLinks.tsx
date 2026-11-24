@@ -47,11 +47,18 @@ export default function NavLinks() {
     measure();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
+    window.addEventListener("load", onScroll);
+
+    // Sections shift when screenshots finish loading; keep the active link honest.
+    const observer = new ResizeObserver(onScroll);
+    observer.observe(document.body);
 
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
+      observer.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      window.removeEventListener("load", onScroll);
     };
   }, [pathname]);
 
