@@ -3,6 +3,8 @@ import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
+import ScrollEffects from "@/components/ScrollEffects";
 import { profile } from "@/lib/content";
 
 const sans = Inter({
@@ -83,6 +85,9 @@ export default function RootLayout({
       <body>
         <div className="bg-canvas" aria-hidden />
         <div className="bg-grid" aria-hidden />
+        <div className="bg-scan" aria-hidden />
+        <CursorGlow />
+        <ScrollEffects />
         <Nav />
         <main>{children}</main>
         <Footer />
