@@ -46,6 +46,7 @@ function CodeCard() {
           <span className="tok-com">
             {"// currently shipping something new"}
           </span>
+          <span className="code-caret" />
         </pre>
       </div>
       <div className="code-foot">
@@ -123,19 +124,6 @@ export default function HomePage() {
           <CodeCard />
         </div>
       </section>
-
-      <div className="ticker" aria-hidden>
-        <div className="ticker-track">
-          <span>
-            System online · Available for internships · Building for the web ·
-            React · TypeScript · Node · Python · Always learning
-          </span>
-          <span>
-            System online · Available for internships · Building for the web ·
-            React · TypeScript · Node · Python · Always learning
-          </span>
-        </div>
-      </div>
 
       <section className="section" id="projects">
         <div className="wrap">

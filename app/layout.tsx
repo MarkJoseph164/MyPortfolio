@@ -3,8 +3,9 @@ import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import CursorGlow from "@/components/CursorGlow";
+import CodeCursor from "@/components/CodeCursor";
 import ScrollEffects from "@/components/ScrollEffects";
+import Ticker from "@/components/Ticker";
 import { profile } from "@/lib/content";
 
 const sans = Inter({
@@ -62,8 +63,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f8fb" },
-    { media: "(prefers-color-scheme: dark)", color: "#121318" },
+    { media: "(prefers-color-scheme: light)", color: "#faf7ff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0713" },
   ],
 };
 
@@ -83,12 +84,21 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
+        <div className="scroll-progress" aria-hidden>
+          <span />
+        </div>
         <div className="bg-canvas" aria-hidden />
         <div className="bg-grid" aria-hidden />
         <div className="bg-scan" aria-hidden />
-        <CursorGlow />
+        <div className="orb-field" aria-hidden>
+          <span className="orb orb-1" />
+          <span className="orb orb-2" />
+          <span className="orb orb-3" />
+        </div>
+        <CodeCursor />
         <ScrollEffects />
         <Nav />
+        <Ticker />
         <main>{children}</main>
         <Footer />
       </body>

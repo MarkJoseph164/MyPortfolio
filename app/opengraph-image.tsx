@@ -16,9 +16,9 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background:
-            "linear-gradient(135deg, #121318 0%, #23101a 55%, #191430 100%)",
+            "linear-gradient(135deg, #0b0713 0%, #1d1038 55%, #2a1150 100%)",
           padding: "72px",
-          color: "#f4f5f9",
+          color: "#f6f0ff",
           fontFamily: "sans-serif",
         }}
       >
@@ -28,7 +28,7 @@ export default function OpengraphImage() {
               width: 58,
               height: 58,
               borderRadius: 14,
-              background: "linear-gradient(135deg, #e11d48, #881337)",
+              background: "linear-gradient(135deg, #a855f7, #5b21b6)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -43,7 +43,7 @@ export default function OpengraphImage() {
             <div style={{ fontSize: 24, fontWeight: 600 }}>
               {profile.displayName}
             </div>
-            <div style={{ fontSize: 17, color: "#fda4af" }}>{profile.title}</div>
+            <div style={{ fontSize: 17, color: "#e9d5ff" }}>{profile.title}</div>
           </div>
         </div>
 
@@ -59,7 +59,7 @@ export default function OpengraphImage() {
           >
             {profile.headline}
           </div>
-          <div style={{ fontSize: 24, color: "#b3b5c0" }}>
+          <div style={{ fontSize: 24, color: "#b9a6d8" }}>
             {`${profile.location} · ${projects.length} projects`}
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function OpengraphImage() {
                 borderRadius: 999,
                 border: "1px solid rgba(255,255,255,0.2)",
                 fontSize: 19,
-                color: "#f2eaee",
+                color: "#f3e8ff",
               }}
             >
               {tech}

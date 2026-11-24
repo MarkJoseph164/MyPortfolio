@@ -1,15 +1,8 @@
 import Link from "next/link";
 import { FileText } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import NavLinks from "./NavLinks";
 import { profile } from "@/lib/content";
-
-const links = [
-  { href: "/#projects", label: "Projects" },
-  { href: "/#skills", label: "Skills" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#education", label: "Education" },
-  { href: "/#contact", label: "Contact" },
-];
 
 export default function Nav() {
   return (
@@ -23,13 +16,7 @@ export default function Nav() {
           </span>
         </Link>
 
-        <nav className="nav-links" aria-label="Sections">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className="nav-link">
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <NavLinks />
 
         <div className="nav-actions">
           <ThemeToggle />
