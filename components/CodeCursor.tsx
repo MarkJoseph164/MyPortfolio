@@ -44,8 +44,11 @@ export default function CodeCursor() {
     let on = false;
 
     const resize = () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
+      const nextWidth = document.documentElement.clientWidth;
+      const nextHeight = document.documentElement.clientHeight;
+      if (nextWidth === width && nextHeight === height && canvas.width) return;
+      width = nextWidth;
+      height = nextHeight;
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);

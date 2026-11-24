@@ -63,6 +63,17 @@ export default function ScrollEffects() {
       node.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
     });
 
+    // Repeated reveal: reset only once the element is well outside the
+    // viewport, so an element sitting at the edge can't flicker in/out.
+    const resetNode = (el: HTMLElement) => {
+      el.classList.remove("is-visible", "is-settled");
+      if (el.classList.contains("proj-card")) {
+        el.style.transform = "";
+        el.style.removeProperty("--mx");
+        el.style.removeProperty("--my");
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -72,13 +83,10 @@ export default function ScrollEffects() {
             if (el.classList.contains("proj-card")) el.classList.add("is-settled");
             continue;
           }
-          // Leaving the viewport resets the element so it animates again next pass.
-          el.classList.remove("is-visible", "is-settled");
-          if (el.classList.contains("proj-card")) {
-            el.style.transform = "";
-            el.style.removeProperty("--mx");
-            el.style.removeProperty("--my");
-          }
+          const rect = entry.boundingClientRect;
+          const fullyOut =
+            rect.bottom < -140 || rect.top > window.innerHeight + 140;
+          if (fullyOut) resetNode(el);
         }
       },
       { threshold: 0.05, rootMargin: "0px 0px -40px 0px" },
